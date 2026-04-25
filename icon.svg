@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
+  <g stroke="#c9a84c" stroke-width="14" stroke-linecap="round">
+    <line x1="256" y1="96" x2="256" y2="416"/>
+    <line x1="160" y1="208" x2="352" y2="208"/>
+  </g>
+  <text x="256" y="356" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-weight="700" font-size="120" fill="#c9a84c"
+        letter-spacing="4">GU</text>
+</svg>
