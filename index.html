@@ -622,16 +622,103 @@
   }
 
   /* ─── RESPONSIVE ─── */
+
+  /* Tablet — 1024px and below */
+  @media (max-width: 1024px) {
+    section { padding: 80px 24px; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .pillars { grid-template-columns: repeat(2, 1fr); }
+    .lines-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Mobile — 768px and below */
   @media (max-width: 768px) {
-    .problem-inner { grid-template-columns: 1fr; }
+    /* Layout */
+    section { padding: 60px 20px; }
+    .problem-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
+    .problem { padding: 60px 0; }
+    .features-bg { padding: 60px 0; }
+    .features-bg > div { padding: 0 20px; }
+    .copy-section { padding: 60px 0; }
+    .copy-inner { padding: 0 20px; }
+    .cta-section { padding: 80px 20px; }
+
+    /* Hero */
+    .hero { padding: 60px 24px; min-height: auto; padding-top: 80px; padding-bottom: 80px; }
+    .hero-cross { width: 300px; height: 300px; }
+    .hero-tagline { margin-top: 32px; }
+
+    /* Grids → single column */
     .features-grid { grid-template-columns: 1fr; }
     .audience-grid { grid-template-columns: 1fr; }
     .pillars { grid-template-columns: 1fr 1fr; }
     .lines-grid { grid-template-columns: 1fr; }
-    .tone-grid { grid-template-columns: 1fr; }
+    .tone-grid { grid-template-columns: 1fr; gap: 32px; }
     .stat-grid { grid-template-columns: 1fr 1fr; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
+
+    /* Steps — remove side line on mobile */
+    .steps::before { display: none; }
+    .step { gap: 16px; padding: 28px 0; }
+    .step-num { width: 40px; font-size: 11px; }
+
+    /* Feature + audience cards */
+    .feature-card { padding: 32px 24px; }
+    .audience-card { padding: 32px 24px; }
+
+    /* Copy blocks */
+    .copy-block { padding-left: 20px; margin-bottom: 36px; }
+    .copy-block p { font-size: 15px; }
+
+    /* CTA */
+    .cta-contact { padding: 24px 32px; width: 100%; text-align: center; }
+
+    /* Footer */
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
+
+    /* Pillar cards */
+    .pillar { padding: 28px 20px; }
   }
+
+  /* Small mobile — 480px and below */
+  @media (max-width: 480px) {
+    section { padding: 48px 16px; }
+    .hero { padding: 60px 16px; }
+
+    /* Stats: stack to single column on tiny screens */
+    .stat-grid { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+
+    /* Section titles */
+    .section-title { font-size: clamp(32px, 10vw, 52px); }
+
+    /* Feature cards full padding reduction */
+    .feature-card { padding: 28px 20px; }
+    .audience-card h3 { font-size: 26px; }
+  }
+
+  /* ─── INLINE GRID RESPONSIVE OVERRIDES ─── */
+
+  .data-section { padding: 80px 0; }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+  @media (max-width: 768px) {
+    .data-section { padding: 60px 0; }
+    .section-inner { padding: 0 20px !important; }
+    .stats-4col { grid-template-columns: 1fr 1fr !important; }
+    .stats-2col { grid-template-columns: 1fr !important; }
+    .screens-4col { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+    .screens-3col { grid-template-columns: 1fr !important; max-width: 280px; margin: 0 auto; }
+
+    /* Stat boxes on mobile */
+    .stats-4col > div { padding: 28px 20px !important; }
+    .stats-2col > div { padding: 24px 20px !important; flex-direction: column !important; gap: 12px !important; align-items: flex-start !important; }
+  }
+
+  @media (max-width: 480px) {
+    .stats-4col { grid-template-columns: 1fr !important; }
+    .screens-4col { grid-template-columns: 1fr 1fr !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -641,7 +728,7 @@
   <div class="hero-cross"></div>
   <p class="eyebrow">Introducing</p>
   <h1 class="hero-title">Gird<span>Up</span></h1>
-  <p class="hero-verse">"GirdUp the loins of your mind, be sober, and rest your hope fully upon the grace that is to be brought to you at the revelation of Jesus Christ."</p>
+  <p class="hero-verse">"Gird up the loins of your mind, be sober, and rest your hope fully upon the grace that is to be brought to you at the revelation of Jesus Christ."</p>
   <p class="hero-ref">1 Peter 1:13</p>
   <div class="divider-line"></div>
   <p class="hero-tagline">Arm your mind before the world gets to you first.</p>
@@ -650,13 +737,13 @@
 <div class="full-rule"></div>
 
 <!-- BIBLICAL LITERACY STATS -->
-<div style="background:var(--black);padding:80px 0;">
-  <div style="max-width:1100px;margin:0 auto;padding:0 40px;">
+<div class="data-section" style="background:var(--black);padding:80px 0;">
+  <div class="section-inner" style="max-width:1100px;margin:0 auto;padding:0 40px;">
     <span class="section-label" style="text-align:center;display:block;">The Data Behind The Mission</span>
     <h2 class="section-title" style="text-align:center;margin-bottom:16px;">The Largest Christian Nation<br>That Doesn't Know Its Bible</h2>
     <p class="section-body" style="text-align:center;margin:0 auto 64px;max-width:620px;">The United States has more Christians than any country on earth. It also has one of the lowest rates of biblical literacy in the developed world. GirdUp exists because of this gap.</p>
 
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;">
+    <div class="stats-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;">
       <div style="background:var(--dark);padding:44px 28px;text-align:center;border-top:3px solid var(--gold);">
         <div style="font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--gold);line-height:1;margin-bottom:12px;">235M</div>
         <div style="font-size:13px;color:var(--white);font-weight:500;margin-bottom:8px;">Christians in America</div>
@@ -683,7 +770,7 @@
       </div>
     </div>
 
-    <div style="margin-top:2px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+    <div class="stats-2col" style="margin-top:2px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
       <div style="background:var(--off-black);padding:36px 40px;display:flex;gap:32px;align-items:center;">
         <div style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--gold);line-height:1;flex-shrink:0;">39%</div>
         <div>
@@ -784,7 +871,7 @@
       <h3 style="font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:var(--white);text-align:center;margin-bottom:8px;">Onboarding</h3>
       <p style="font-size:14px;color:var(--white-dim);text-align:center;max-width:600px;margin:0 auto 40px;line-height:1.7;">A 2-minute setup that defines your purpose, your battles, and your commitment — so every feature of GirdUp is tuned to you from day one.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px;">
+      <div class="screens-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px;">
 
         <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
           <div style="background:#0a0a0a;border-radius:24px;border:2px solid #2a2a2a;overflow:hidden;width:100%;box-shadow:0 16px 40px rgba(0,0,0,.5);">
@@ -821,7 +908,7 @@
       <h3 style="font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:var(--white);text-align:center;margin-bottom:8px;">WordKeeper AI</h3>
       <p style="font-size:14px;color:var(--white-dim);text-align:center;max-width:600px;margin:0 auto 40px;line-height:1.7;">Your personal Biblical guidance companion. Bring it anything — doubt, fear, temptation, questions. Every response is rooted in Scripture.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div class="screens-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
 
         <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
           <div style="background:#0a0a0a;border-radius:24px;border:2px solid #2a2a2a;overflow:hidden;width:100%;box-shadow:0 16px 40px rgba(0,0,0,.5);">
@@ -883,7 +970,7 @@
       <div class="feature-card">
         <span class="feature-icon">🔥</span>
         <h3>Streak & Accountability</h3>
-        <p>Daily streaks, progress tracking, and accountability partner features. Invite a brother or sister to GirdUp alongside you. Iron sharpens iron.</p>
+        <p>Daily streaks, progress tracking, and accountability partner features. Invite a brother or sister to gird up alongside you. Iron sharpens iron.</p>
         <span class="verse-tag">Proverbs 27:17 — Iron sharpens iron</span>
       </div>
       <div class="feature-card">
@@ -1010,7 +1097,7 @@
         <p>Built for believers who are done being passive about their faith.<span>Identity Angle</span></p>
       </div>
       <div class="line-card">
-        <p>GirdUp. Go out. Stand firm.<span>Brand Rallying Cry</span></p>
+        <p>Gird up. Go out. Stand firm.<span>Brand Rallying Cry</span></p>
       </div>
       <div class="line-card">
         <p>You can scroll after you've prayed. Not before.<span>Social Media Hook</span></p>
@@ -1021,16 +1108,17 @@
 
 <!-- CTA -->
 <div class="cta-section">
-  <h2>GirdUp.</span><br>Go Out.<br>Stand <span>Firm.</span></h2>
+  <h2>Gird <span>Up.</span><br>Go Out.<br>Stand <span>Firm.</span></h2>
   <p>GirdUp is in development. If you're a believer, a builder, or a ministry partner who wants to see this in the hands of the next generation — let's talk.</p>
   <div class="cta-contact">
     <span>Contact / Partnership Inquiries</span>
-    <strong>support@girdupapp.io</strong>
+    <strong>girdupapp.io</strong>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
+  <span>Confidential — Marketing One-Pager — 2026</span>
   <span class="logo-foot">GirdUp</span>
   <span>1 Peter 1:13</span>
 </footer>
